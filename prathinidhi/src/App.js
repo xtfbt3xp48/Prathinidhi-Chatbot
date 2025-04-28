@@ -1,15 +1,18 @@
-// App.js
-
 import React from 'react';
-import Chatbot from './components/Chatbot'; // Importing your Chatbot component
-import './App.css'; // Optional if you want to keep default CSS or your own
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router components
+import Chatbot from './components/Chatbot'; // Import Chatbot Component
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Chatbot />
-    </div>
+    <Router>
+      <div>
+        {/* Define routes for the app */}
+        <Routes>
+          <Route path="/" element={<Chatbot />} /> {/* Home route that renders the Chatbot */}
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
